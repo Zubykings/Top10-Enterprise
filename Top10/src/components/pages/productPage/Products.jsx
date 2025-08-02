@@ -38,6 +38,7 @@ export default function Products() {
           ctaLink="#products"
           ctaStyle="bg-red-900 hover:bg-red-800"
           backgroundImage={chain}
+         
         />
       </motion.div>
       <motion.div

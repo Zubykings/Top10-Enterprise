@@ -19,7 +19,7 @@ function SubscriptionForm({ submitSubscription }) {
     useSubscriptionForm(submitSubscription);
 
   return (
-    <section className="py-8 bg-transparent">
+    <section className="py-4 bg-transparent">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {loading ? (
           <div className="flex justify-center items-center h-48">

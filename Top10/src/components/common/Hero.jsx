@@ -31,6 +31,7 @@ function Hero({
   textColor = "text-white",
   overlayOpacity = "bg-opacity-80",
   subscriptionForm,
+  ctaStyle,
 }) {
   return (
     <motion.section
@@ -63,12 +64,22 @@ function Hero({
             {description}
           </motion.p>
         )}
+        {subscriptionForm && (
+          <motion.div
+            className=""
+            variants={formVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {subscriptionForm}
+          </motion.div>
+        )}
         {ctaText && ctaLink && (
           <motion.a
             href={ctaLink}
             target={ctaLink.includes("http") ? "_blank" : "_self"}
             rel={ctaLink.includes("http") ? "noopener noreferrer" : undefined}
-            className="inline-flex items-center gap-2 bg-green-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-600 text-lg"
+            className={`inline-flex items-center gap-2 bg-green-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-600 text-lg ${ctaStyle}`}
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"
@@ -76,16 +87,6 @@ function Hero({
             {ctaIcon && ctaIcon}
             {ctaText}
           </motion.a>
-        )}
-        {subscriptionForm && (
-          <motion.div
-            className="mt-8"
-            variants={formVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {subscriptionForm}
-          </motion.div>
         )}
       </div>
     </motion.section>
